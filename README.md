@@ -2,6 +2,14 @@
 
 Paraca, modern bir dijital bankacılık web sitesi örneğidir. Clean Code prensipleri kullanılarak React, Tailwind CSS ve Vite ile geliştirilmiştir.
 
+## Tasarım Referansı
+
+Bu proje, aşağıdaki Figma tasarımını referans alarak birebir uygulama amacıyla geliştirilmektedir:
+
+[Responsive Digital Banking Website - Figma Community](https://www.figma.com/design/j8lyfZddAk3pKYapLSv9Rv/Responsive-Digital-Banking-Website--Community-?t=H3EKO5ymONW6fduv-0)
+
+Tasarımın arayüz detayları, renk paletleri, yazı tipleri ve duyarlı (responsive) yapısı projeye uygulanmaktadır.
+
 ## Özellikler
 
 - Responsive tasarım ile tüm cihazlarda uyumlu
@@ -9,6 +17,7 @@ Paraca, modern bir dijital bankacılık web sitesi örneğidir. Clean Code prens
 - Tailwind CSS ile modern ve temiz arayüz
 - Yeniden kullanılabilir bileşenler
 - Clean Code prensipleri uygulanmış kod yapısı
+- Figma tasarımıyla birebir uyumlu arayüz
 
 ## Sayfalar
 
@@ -78,4 +87,5 @@ paraca/
 - `npm run dev` - Geliştirme sunucusunu başlatır
 - `npm run build` - Projeyi build eder
 - `npm run preview` - Build edilmiş projeyi önizleme olarak çalıştırır
+
 # paraca-bank-website git init git add . git commit -m first commit git branch -M main git remote add origin https://github.com/engincanaraz/paraca-bank-website.git git push -u origin main

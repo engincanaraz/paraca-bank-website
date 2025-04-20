@@ -17,7 +17,7 @@ const Home = () => {
             </p>
             <Link
               to="/signup"
-              className="btn rounded-full bg-[#194FDA]/20 border-none text-[#194FDA] font-bold text-[18px] lg:text-[24px] flex items-center gap-2 w-[190px] lg:w-[239px] font-sf-pro-rounded ">
+              className="btn rounded-full bg-[#194FDA]/20 border-none text-[#194FDA] font-bold text-[18px] lg:text-[24px] flex items-center gap-2 w-[200px] lg:w-[259px] font-sf-pro-rounded ">
               ParacaCard İste 👉🏻
             </Link>
           </div>
