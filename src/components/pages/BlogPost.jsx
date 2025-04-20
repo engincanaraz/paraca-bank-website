@@ -1,12 +1,5 @@
-
-
 const BlogPost = () => {
-
-  return (
-    <div className="  ">
-    
-    </div>
-  );
+  return <div className="container mx-auto py-12 px-4"></div>;
 };
 
-export default BlogPost; 
+export default BlogPost;
