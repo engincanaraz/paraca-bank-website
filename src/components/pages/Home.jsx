@@ -13,6 +13,8 @@ import Background from "../../assets/images/shapes/Background.png";
 import blog1 from "../../assets/images/blog-1.png";
 import blog2 from "../../assets/images/blog-2.png";
 import blog3 from "../../assets/images/blog-3.png";
+import LogoBanner from "../../assets/images/logos/LogoBanner.png";
+import Memojis from "../../assets/images/Memojis.png";
 
 const Home = () => {
   return (
@@ -49,7 +51,7 @@ const Home = () => {
       </div>
 
       {/* 2. Section - Finansal İşlemler */}
-      <div className="container mx-auto lg:py-3 px-4">
+      <div className="container mx-auto py-10 lg:py-20 px-4">
         <h5 className="text-[18px] md:text-[28px] lg:text-[34px]  lg:max-w-[159px] font-medium text-[#3369C8] pb-5 font-sf-pro-rounded">
           FİNANSAL İŞLEMLER
         </h5>
@@ -187,7 +189,7 @@ const Home = () => {
       </div>
 
       {/* 3. Section - Blog */}
-      <div className="container mx-auto lg:py-10 px-4">
+      <div className="container mx-auto py-10 lg:py-20 px-4">
         <h5 className="text-[18px] md:text-[28px] lg:text-[34px]  lg:max-w-[159px] font-medium text-[#3369C8] pb-5 font-sf-pro-rounded">
           BLOG
         </h5>
@@ -198,7 +200,7 @@ const Home = () => {
         {/* Masaüstü için Grid, sadece büyük ekranlar (lg:) */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-4">
           {/* Blog 1 */}
-          <div className="flex card bg-[#194FDA]/20 w-96 shadow-sm rounded-[20px]">
+          <div className="flex card bg-[#194FDA]/20 w-96 shadow-md rounded-[20px]">
             <figure className="p-5">
               <img src={blog1} alt="blog1" className="rounded-[20px]" />
             </figure>
@@ -219,7 +221,7 @@ const Home = () => {
             </div>
           </div>
           {/* Blog 2 */}
-          <div className="flex card bg-[#194FDA]/20 w-96 shadow-sm rounded-[20px]">
+          <div className="flex card bg-[#194FDA]/20 w-96 shadow-md rounded-[20px]">
             <figure className="p-5">
               <img src={blog2} alt="blog2" className="rounded-[20px]" />
             </figure>
@@ -241,7 +243,7 @@ const Home = () => {
             </div>
           </div>
           {/* Blog 3 */}
-          <div className="flex card bg-[#194FDA]/20 w-96 shadow-sm rounded-[20px]">
+          <div className="flex card bg-[#194FDA]/20 w-96 shadow-md rounded-[20px]">
             <figure className=" p-5">
               <img src={blog3} alt="blog3" className="rounded-[20px]" />
             </figure>
@@ -338,14 +340,72 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center w-full mt-5">
+        <div className="flex justify-center items-center w-full mt-10">
           <Link
             to="/blog"
-            className="btn rounded-full bg-transparent border-white border-[2px] text-white font-bold text-[18px] lg:text-[24px] flex items-center justify-center gap-2 w-[300px] lg:w-[410px] font-sf-pro-rounded">
+            className="btn shadow-none rounded-full bg-transparent border-white border-[2px] text-white font-bold text-[18px] lg:text-[24px] items-center justify-center gap-2 w-[300px] lg:w-[420px] font-sf-pro-rounded hidden  lg:flex">
             Daha fazlasına göz at{" "}
             <img src={arrowWhite} alt="arrow" className="w-[24px] h-[20px]" />
           </Link>
         </div>
+      </div>
+
+      {/* 4. Section - Firmalar */}
+      <div className="container mx-auto py-10 lg:py-20 px-4">
+        <h5 className="text-[18px] md:text-[28px] lg:text-[34px]  lg:max-w-[159px] font-medium text-[#3369C8] pb-5 font-sf-pro-rounded">
+          FİRMALAR
+        </h5>
+        <h1 className="text-[28px] md:text-[42px] lg:text-[64px] text-black font-bold pb-5 lg:pb-20 font-sf-pro-rounded">
+          En İyiler
+        </h1>
+        <div className="grid lg:grid-cols-5  grid-cols-3 justify-center items-center">
+          <img src={LogoBanner} alt="logo-banner" className="w-auto h-auto" />
+          <img src={LogoBanner} alt="logo-banner" className="w-auto h-auto" />
+          <img src={LogoBanner} alt="logo-banner" className="w-auto h-auto" />
+          <img
+            src={LogoBanner}
+            alt="logo-banner"
+            className="w-auto h-auto hidden lg:block"
+          />
+          <img
+            src={LogoBanner}
+            alt="logo-banner"
+            className="w-auto h-auto hidden lg:block"
+          />
+        </div>
+        <div className="flex justify-center items-center w-full mt-8">
+          <Link
+            to="/blog"
+            className="btn shadow-none rounded-full bg-transparent border-white border-[2px] text-white font-bold text-[18px] lg:text-[24px] hidden lg:flex items-center justify-center gap-2 w-[300px] lg:w-[300px] font-sf-pro-rounded">
+            Marka Ortaklıkları{" "}
+            <img src={arrowWhite} alt="arrow" className="w-[24px] h-[20px]" />
+          </Link>
+        </div>
+      </div>
+
+      {/* 5. Section - Başla */}
+      <div className="container mx-auto py-10 lg:py-20 px-4">
+        <h5 className="text-[18px] md:text-[28px] lg:text-[34px]  lg:max-w-[159px] font-medium text-[#3369C8] pb-5 font-sf-pro-rounded">
+          BAŞLA
+        </h5>
+        <h1 className="text-[28px] md:text-[42px] lg:text-[64px] text-black font-bold pb-5 lg:pb-20 font-sf-pro-rounded">
+          Ücretsiz üyelik{" "}
+        </h1>
+        <p className="text-[18px] md:text-[24px] lg:text-[24px] text-black font-medium lg:max-w-[600px]  font-sf-pro-rounded">
+          Paraca'ya ücretsiz üye ol, kartını adresine teslim al. Böylece sen de
+          avantajlarla büyüyen ailenin bir parçası olursun.
+        </p>
+        <Link
+          to="/signup"
+          className="btn rounded-full bg-[#194FDA]/20 border-none text-[#194FDA] font-bold text-[18px] lg:text-[24px] flex items-center gap-2 w-[250px] lg:w-[259px] font-sf-pro-rounded mt-10 ">
+          ParacaCard iste{" "}
+          <img src={arrowBlue} alt="arrow" className="w-[24px] h-[20px]" />
+        </Link>
+        <img
+          src={Memojis}
+          alt="memojis"
+          className="w-full h-full py-5 hidden lg:block"
+        />
       </div>
     </div>
   );
