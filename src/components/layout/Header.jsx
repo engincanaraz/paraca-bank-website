@@ -2,9 +2,22 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/images/logos/Logo.png";
 import plus from "../../assets/images/icons/plus.png";
+import Button from "../ui/Button";
 
+/**
+ * Site üst menüsü (Header) bileşeni
+ * @returns {JSX.Element} Header bileşeni
+ */
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Menü linkleri - merkezi hale getirme
+  const menuLinks = [
+    { to: "/urunler", label: "Ürünler" },
+    { to: "/islemler", label: "İşlemler" },
+    { to: "/ucretlendirme", label: "Ücretlendirme" },
+    { to: "/blog", label: "Blog" },
+  ];
 
   return (
     <header className="bg-black shadow-sm sticky top-0 z-50">
@@ -16,41 +29,30 @@ const Header = () => {
           </Link>
           <nav>
             <ul className="flex items-center gap-6 text-white text-lg">
-              <li>
-                <Link to="/urunler" className="hover:opacity-80">
-                  Ürünler
-                </Link>
-              </li>
-              <li>
-                <Link to="/islemler" className="hover:opacity-80">
-                  İşlemler
-                </Link>
-              </li>
-              <li>
-                <Link to="/ucretlendirme" className="hover:opacity-80">
-                  Ücretlendirme
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="hover:opacity-80">
-                  Blog
-                </Link>
-              </li>
+              {menuLinks.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className="hover:opacity-80">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
         <div className="flex items-center gap-3">
-          <Link
+          <Button
             to="/signin"
-            className="btn rounded-full bg-gray-600 border-none text-white ">
+            variant="outline"
+            className="text-white bg-[#9C9C9C] text-[14px]">
             Sign in
-          </Link>
-          <Link
+          </Button>
+          <Button
             to="/signup"
-            className="btn rounded-full bg-blue-600 border-none text-white flex items-center gap-2">
+            variant="primary"
+            className="flex items-center gap-2 text-[14px]">
             Sign up for free
             <img src={plus} alt="plus" className="w-4 h-4" />
-          </Link>
+          </Button>
         </div>
       </div>
 
@@ -58,7 +60,8 @@ const Header = () => {
       <div className="lg:hidden container px-4 py-2 flex justify-between items-center">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="btn btn-circle btn-ghost bg-white/30">
+          className="btn btn-circle btn-ghost bg-white/30"
+          aria-label="Toggle menu">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -78,36 +81,32 @@ const Header = () => {
           <img src={logo} alt="Paraca" className="h-[60px]" />
         </Link>
 
-        <Link
+        <Button
           to="/signin"
-          className="btn rounded-full bg-gray-600 border-none text-white">
+          variant="outline"
+          className="text-white bg-[#9C9C9C] text-[14px]">
           Sign in
-        </Link>
+        </Button>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden absolute top-16 left-0 right-0 bg-base-100 shadow-lg z-50 p-4">
           <ul className="menu w-full">
-            <li>
-              <Link to="/urunler">Ürünler</Link>
-            </li>
-            <li>
-              <Link to="/islemler">İşlemler</Link>
-            </li>
-            <li>
-              <Link to="/ucretlendirme">Ücretlendirme</Link>
-            </li>
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
+            {menuLinks.map((link) => (
+              <li key={link.to}>
+                <Link to={link.to}>{link.label}</Link>
+              </li>
+            ))}
             <li className="mt-4">
-              <Link
+              <Button
                 to="/signup"
-                className="btn btn-primary w-full rounded-full flex justify-center items-center gap-2">
+                variant="primary"
+                fullWidth
+                className="flex justify-center items-center gap-2">
                 Sign up for free
                 <img src={plus} alt="plus" className="w-4 h-4" />
-              </Link>
+              </Button>
             </li>
           </ul>
         </div>

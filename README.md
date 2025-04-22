@@ -1,6 +1,6 @@
 # Paraca - Dijital Bankacılık Web Sitesi
 
-Paraca, modern bir dijital bankacılık web sitesi örneğidir. Clean Code prensipleri kullanılarak React, Tailwind CSS ve Vite ile geliştirilmiştir.
+Paraca, modern bir dijital bankacılık web sitesi örneğidir. Clean Code prensipleri kullanılarak React, Tailwind CSS, Daisy.UI ve Vite ile geliştirilmiştir. Proje, sürdürülebilir ve yeniden kullanılabilir bileşenler kullanılarak modüler bir yapıda tasarlanmıştır.
 
 ## Tasarım Referansı
 
@@ -12,19 +12,22 @@ Tasarımın arayüz detayları, renk paletleri, yazı tipleri ve duyarlı (respo
 
 ## Özellikler
 
-- Responsive tasarım ile tüm cihazlarda uyumlu
-- React Router ile sayfa yönlendirme
+- Responsive tasarım ile tüm cihazlarda uyumlu görünüm
+- React Router ile dinamik sayfa yönlendirme
 - Tailwind CSS ile modern ve temiz arayüz
-- Yeniden kullanılabilir bileşenler
-- Clean Code prensipleri uygulanmış kod yapısı
+- daisy.UI ile daha hızlı, daha temiz, daha kolay geliştirme
+- Yeniden kullanılabilir bileşen mimarisi
+- Clean Code prensipleri ile yapılandırılmış kod
+- Merkezi tema sistemi
+- Modüler yapı ile yüksek bakım kolaylığı
 - Figma tasarımıyla birebir uyumlu arayüz
 
 ## Sayfalar
 
-- Ana Sayfa: Dijital bankacılık hizmetlerinin tanıtımı
-- Blog: Finansal ipuçları ve bilgiler içeren blog yazıları
-- Blog Yazısı: Detaylı blog içeriği sayfası
-- Kayıt: Kullanıcı kayıt formu
+- **Ana Sayfa**: Dijital bankacılık hizmetlerinin tanıtımı
+- **Blog**: Finansal ipuçları ve bilgiler içeren blog yazıları
+- **Blog Yazısı**: Detaylı blog içeriği sayfası
+- **Giriş**: Kullanıcı giriş formu
 
 ## Kurulum
 
@@ -32,10 +35,10 @@ Projeyi yerel makinenize kurmak için aşağıdaki adımları izleyin:
 
 ```bash
 # Repoyu klonlayın
-git clone https://github.com/kullanici/paraca.git
+git clone https://github.com/engincanaraz/paraca-bank-website.git
 
 # Proje dizinine gidin
-cd paraca
+cd paraca-bank-website
 
 # Bağımlılıkları yükleyin
 npm install
@@ -44,7 +47,7 @@ npm install
 npm run dev
 ```
 
-## Yapı
+## Proje Yapısı
 
 Proje, sürdürülebilir ve ölçeklenebilir bir mimariye sahiptir:
 
@@ -53,16 +56,33 @@ paraca/
 ├── public/
 ├── src/
 │   ├── assets/
+│   │   ├── images/
+│   │   │   ├── icons/
+│   │   │   ├── logos/
+│   │   │   └── shapes/
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── Header.jsx
-│   │   │   └── Footer.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── MainLayout.jsx
 │   │   ├── pages/
 │   │   │   ├── Home.jsx
 │   │   │   ├── Blog.jsx
 │   │   │   ├── BlogPost.jsx
-│   │   │   └── Register.jsx
+│   │   │   └── Login.jsx
+│   │   ├── sections/
+│   │   │   ├── home/
+│   │   │   │   ├── HeroSection.jsx
+│   │   │   │   ├── FeatureSection.jsx
+│   │   │   │   └── BlogSection.jsx
 │   │   └── ui/
+│   │       ├── Button.jsx
+│   │       ├── Input.jsx
+│   │       ├── BlogCard.jsx
+│   │       ├── Section.jsx
+│   │       └── SocialButton.jsx
+│   ├── utils/
+│   │   └── theme.js
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── index.css
@@ -73,12 +93,54 @@ paraca/
 └── package.json
 ```
 
-## Teknolojiler
+## Bileşen Mimarisi
 
-- [React](https://react.dev/) - UI kütüphanesi
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [Vite](https://vitejs.dev/) - Frontend build tool
-- [React Router](https://reactrouter.com/) - Sayfa yönlendirmesi
+Proje, aşağıdaki bileşen kategorilerine ayrılmıştır:
+
+### UI Bileşenleri
+
+Temel, tekrar kullanılabilir arayüz öğeleri:
+
+- **Button**: Farklı varyantlarda (birincil, ikincil, tehlike, taslak) buton bileşeni
+- **Input**: Form girdi alanları için kullanılabilir bileşen
+- **BlogCard**: Blog kartları için standartlaştırılmış bileşen
+- **Section**: Sayfa bölümleri için şablon bileşen
+- **SocialButton**: Sosyal medya butonları için özelleştirilmiş bileşen
+
+### Sayfa Bileşenleri
+
+Ana sayfaları temsil eden bileşenler:
+
+- **Home**: Ana sayfa
+- **Blog**: Blog listesi sayfası
+- **BlogPost**: Tek blog yazısı sayfası
+- **Login**: Kullanıcı giriş sayfası
+
+### Bölüm Bileşenleri
+
+Sayfaların alt bölümlerini temsil eden bileşenler:
+
+- **HeroSection**: Ana sayfa hero bölümü
+- **FeatureSection**: Özellikler bölümü
+- **BlogSection**: Blog önizleme bölümü
+
+### Düzen Bileşenleri
+
+Sayfa düzenini oluşturan bileşenler:
+
+- **Header**: Üst menü
+- **Footer**: Alt bilgi
+- **MainLayout**: Sayfa iskeleti
+
+## Tema Sistemi
+
+`src/utils/theme.js` içinde tanımlanan merkezi tema sistemi, projedeki renkleri, yazı tiplerini ve diğer tasarım sabitlerini yönetmek için kullanılır:
+
+- Renkler
+- Yazı boyutları
+- Boşluk değerleri
+- Kenar yuvarlaklıkları
+- Konteyner stili
 
 ## Geliştirme
 
@@ -88,4 +150,10 @@ paraca/
 - `npm run build` - Projeyi build eder
 - `npm run preview` - Build edilmiş projeyi önizleme olarak çalıştırır
 
-# paraca-bank-website git init git add . git commit -m first commit git branch -M main git remote add origin https://github.com/engincanaraz/paraca-bank-website.git git push -u origin main
+## Katkıda Bulunma
+
+1. Projeyi fork edin
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Değişikliklerinizi commit edin (`git commit -m 'feat: add amazing feature'`)
+4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
+5. Pull Request oluşturun
